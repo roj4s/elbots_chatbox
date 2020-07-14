@@ -1,5 +1,6 @@
 import React from 'react';
 import AvatarBar from './avatarbar/avatarbar';
+import MessageInput from './messageinput/messageinput';
 
 import './chatbox.css';
 
@@ -12,6 +13,7 @@ export default function ChatBox(){
                 title="Some title"
                 subtitle="Subtitle"
                 />
+            <MessageInput />
         </div>
     );
 

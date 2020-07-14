@@ -6,7 +6,7 @@
     text-align: center;
     box-sizing: border-box;
     min-width: 400px;
-    
+    position: relative;
 }
 
 @media only screen and (max-width: 600px){
