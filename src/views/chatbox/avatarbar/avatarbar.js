@@ -7,7 +7,7 @@ export default function AvatarBar({image, title, subtitle}) {
 
     return (
         <div className="AvatarBar">
-            <img className="AvatarBarImage" src={image} />
+            <img alt='avatar' className="AvatarBarImage" src={image} />
             <div className="AvatarBarTitlesContainer">
                 <span className="AvatarBarTitle">{title}</span>
                 <span className="AvatarBarSubtitle">{subtitle}</span>

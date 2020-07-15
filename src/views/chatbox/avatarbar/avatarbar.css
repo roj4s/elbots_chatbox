@@ -3,7 +3,10 @@
     display: flex;
     align-items: center;    
     padding: 10px;
-    background-color: violet;
+    background-color: #008C76FF;
+    -webkit-box-shadow: 5px 12px 19px -2px rgba(0,0,0,0.36);
+    -moz-box-shadow: 5px 12px 19px -2px rgba(0,0,0,0.36);
+    box-shadow: 5px 12px 19px -2px rgba(0,0,0,0.36);
 
 }
 
@@ -13,11 +16,22 @@
     height: 50px;
     margin-right: 10px;
     object-fit: cover;
+    border: 2px solid rgb(161, 161, 161);
 }
 
 .AvatarBarTitlesContainer {
     display: flex;
     flex-direction: column;
-    margin-left: 20px;
+    margin-left: 10px;
     align-items: flex-start;
+}
+
+.AvatarBarTitle {
+    font-weight: bold;
+    color: white;
+    font-size: 24px;
+}
+
+.AvatarBarSubtitle {
+    color:rgb(224, 223, 223);
 }

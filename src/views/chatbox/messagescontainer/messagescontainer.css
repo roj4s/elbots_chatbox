@@ -1,14 +1,14 @@
 .MessagesContainer {
     width: 100%;
     height: 100%;
-    padding: 10px;
+    padding: 15px;
     box-sizing: border-box;
     
 }
 
 .MessageSender {
     float: right;
-    background-color: burlywood;
+    background-color: #FAA094FF;
     clear: both;
 }
 
@@ -17,8 +17,13 @@
     border-radius: 8px;
     display: inline-block;
     padding: 10px;
-    margin-top: 5px;
+    margin-top: 8px;
     text-align: start;    
+    -webkit-box-shadow: 5px 5px 5px -2px rgba(0,0,0,0.36);
+    -moz-box-shadow: 5px 5px 5px -2px rgba(0,0,0,0.36);
+    box-shadow: 5px 5px 5px -2px rgba(0,0,0,0.36);
+    color: rgb(58, 80, 74);
+    font-size: 18px;
 }
 
 .MessageBox * {
@@ -28,7 +33,7 @@
 .MessageReceiver {
     float: left;
     clear: both;
-    background-color: cadetblue;
+    background-color: #9ED9CCFF;
 }
 
 .MessageBoxWhen {
