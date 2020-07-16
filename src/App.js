@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import ChatBox from './views/chatbox/chatbox';
+import ChatBox from './features/chatbox/chatbox';
 
 function App() {
   return (

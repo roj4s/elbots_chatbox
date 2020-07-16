@@ -3,7 +3,15 @@
     height: 100%;
     padding: 15px;
     box-sizing: border-box;
+    padding-top: 20%;
+    padding-bottom: 20%;
+    overflow-y: scroll;
+    position: absolute;
     
+}
+
+.MessagesContainer::-webkit-scrollbar {
+    display: none;
 }
 
 .MessageSender {
