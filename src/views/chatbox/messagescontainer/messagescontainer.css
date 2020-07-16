@@ -8,7 +8,7 @@
 
 .MessageSender {
     float: right;
-    background-color: #FAA094FF;
+    background-color: rgb(197, 197, 197);
     clear: both;
 }
 
@@ -33,7 +33,7 @@
 .MessageReceiver {
     float: left;
     clear: both;
-    background-color: #9ED9CCFF;
+    background-color: rgb(174, 236, 223);
 }
 
 .MessageBoxWhen {

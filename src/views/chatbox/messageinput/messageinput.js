@@ -1,5 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
+import send_button from './send_button.svg';
+
 
 import './messageinput.css';
 
@@ -21,7 +23,12 @@ export default function MessageInput (){
             className="MessageInputInput" 
             type='textarea'/>
         <div className="MessageInputSubmit">
-            <div className="MessageInputSubmitInner"></div>
+
+            <img alt="submit_button" class="MessageInputSubmitButton" src={send_button} />
+            {false &&
+            <div className="MessageInputSubmitInner">
+                <div className="MessageInputInnerInner"></div>
+            </div>}
         </div>
     </div>
     );

@@ -17,7 +17,7 @@
     outline: none;
     border: none;
     font-size: 18px;
-    margin: 10px;
+    margin: 5px;
     width: 100%;
     box-sizing: border-box;
     border-radius: 32px;
@@ -28,29 +28,66 @@
 }
 
 .MessageInputSubmit {
-    
     display: none;
     align-items: center;
     justify-content: center;
-    min-width: 40px;
-    min-height: 40px;
+    min-width: 45px;
+    min-height: 45px;
     border-radius: 50%;
-    margin-right: 10px;
-    cursor: pointer;
-    vertical-align: middle;
-    text-align: center;
+    margin: 5px;
+    cursor: pointer;    
     -webkit-filter: drop-shadow(5px 12px 3px rgba(0, 0, 0, 0.36));
-    filter: drop-shadow(5px 10px 3px rgba(0, 0, 0, 0.36));    
-    border: 4px solid #008C76FF;
+    filter: drop-shadow(5px 10px 3px rgba(0, 0, 0, 0.36)); 
+    border: 3px solid #008C76FF;
     
 }
+
+.MessageInputSubmitInner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 35px;
+    min-height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+    /*
+    -webkit-filter: drop-shadow(5px 12px 3px rgba(0, 0, 0, 0.36));
+    filter: drop-shadow(5px 10px 3px rgba(0, 0, 0, 0.36));    */
+    border: 2px solid #008C76FF;
+    
+}
+
+.MessageInputInnerInner {
+
+    min-width: 25px;
+    min-height: 25px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    
+    -webkit-filter: drop-shadow(5px 12px 3px rgba(0, 0, 0, 0.36));
+    filter: drop-shadow(5px 10px 3px rgba(0, 0, 0, 0.36));    
+    
+    background-color: #008C76FF;
+
+}
+
+.MessageInputSubmitButton {
+    width: 38px;
+    height: 38px;
+    
+}
+
+/*
 
 .MessageInputSubmitInner {
     background-color: #008C76FF;  
     box-shadow: 5px 12px 19px -2px rgba(0,0,0,0.36);
     position: relative;
     text-align: left;
-    transform: rotate(-180deg) translateY(-20%) translateX(25%) skewX(-30deg) scale(1,.866);
+    transform: rotate(-90deg) translateY(-50%) translateX(25%) skewX(-30deg) scale(1,.866);
 }
 
 .MessageInputSubmitInner:before, .MessageInputSubmitInner:after {
@@ -60,8 +97,8 @@
 }
 
 .MessageInputSubmitInner, .MessageInputSubmitInner::before, .MessageInputSubmitInner:after {
-    width: 16px;
-    height: 16px;
+    width: 22px;
+    height: 22px;
     border-top-right-radius: 30%;
 }
 
@@ -71,7 +108,7 @@
 
 .MessageInputSubmitInner:after {
     transform: rotate(135deg) skewY(-45deg) scale(.707,1.414) translate(50%);
-}
+} */
 
 .MessageInputInput:valid + .MessageInputSubmit {
     
