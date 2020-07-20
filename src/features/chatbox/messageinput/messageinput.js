@@ -1,9 +1,7 @@
 import React, { useState, useCallback, useRef } from 'react';
 import { useDispatch } from 'react-redux';
-import { sendMessage } from '../messagescontainer/messagesSlice';
 import send_button from './send_button.svg';
-
-
+import { sendMessage } from '../../chatbox/messagescontainer/messagesSlice';
 
 import './messageinput.css';
 

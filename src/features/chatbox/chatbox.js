@@ -7,12 +7,13 @@ import './chatbox.css';
 
 export default function ChatBox(){
 
+
     return (
         <div className="ChatBox" >
             <AvatarBar
                 image="http://elbot-e.artificial-solutions.com/images/elbot/elbot70.jpg"
-                title="Some title"
-                subtitle="Subtitle"
+                title="Elbot"
+                subtitle="elbot-e.artificial-solutions.com"
                 />
             <MessagesContainer />
             <MessageInput />

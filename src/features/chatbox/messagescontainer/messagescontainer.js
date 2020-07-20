@@ -1,12 +1,31 @@
 import React , {useCallback, useRef, useEffect} from 'react';
-import { useSelector } from 'react-redux';
-import { selectMessages } from './messagesSlice';
+import { useSelector, useDispatch } from 'react-redux';
+import { selectMessages, registerMessage } from './messagesSlice';
+import getBotApi from '../../app/botApi';
 
 
 import './messagescontainer.css';
 
 
 export default function MessagesContainer() {
+
+    const dispatch = useDispatch();
+    const BotApi = getBotApi();
+
+    useEffect(() => {
+
+        BotApi.ask().then(data => {
+
+            if(data.success){            
+              dispatch(registerMessage({
+                  message: data.text,
+                  isSender: false
+              }));        
+              
+            }                  
+
+          });
+    }, [BotApi, dispatch]);
 
     const ref = useRef(null);
     const setRef = useCallback(el => {

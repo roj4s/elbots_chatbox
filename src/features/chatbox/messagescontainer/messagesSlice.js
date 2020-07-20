@@ -1,4 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
+import getBotApi from '../../app/botApi';
+
+const BotApi = getBotApi();
 
 const getDateObjectFromDate = (date) => {
   
@@ -14,26 +17,43 @@ const getDateObjectFromDate = (date) => {
   
 }
 
-export const messagesSlice = createSlice({
+const messagesSlice = createSlice({
     name: 'messages',
     initialState: {
-      messages: []      
+      messages: []    
     },
     reducers: {
-      sendMessage: (state, action) => {
+      registerMessage: (state, action) => {
         const now = new Date();
+        const data = action.payload;
         const message = {
           key:now.getTime(),
-          message: action.payload,
+          message: data.message,
           when: getDateObjectFromDate(now),
-          isSender: true
+          isSender: data.isSender
         };
         state.messages.push(message);
+      },
+      setSendingMessage: (state, action) => {
+        state.sendingMessage = action.payload;
       }
     },
   });
 
-export const { sendMessage } = messagesSlice.actions;
+
+export const sendMessage = (message) => dispatch => {
+
+    dispatch(registerMessage({message: message, isSender: true}));
+
+    BotApi.ask(message).then(data => {
+      if(data.success){
+        dispatch(registerMessage({message: data.text, isSender: false}));
+      }
+    });
+  
+  };
+
+export const { registerMessage, setSendingMessage } = messagesSlice.actions;
 
 export const selectMessages = state => state.messages.messages;
 
