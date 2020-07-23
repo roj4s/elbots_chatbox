@@ -20,7 +20,8 @@ const getDateObjectFromDate = (date) => {
 const messagesSlice = createSlice({
     name: 'messages',
     initialState: {
-      messages: []    
+      messages: [],
+      sendingMessage: true    
     },
     reducers: {
       registerMessage: (state, action) => {
@@ -42,19 +43,38 @@ const messagesSlice = createSlice({
 
 
 export const sendMessage = (message) => dispatch => {
-
+ 
     dispatch(registerMessage({message: message, isSender: true}));
+    
+    setTimeout(()=>{
+      dispatch(setSendingMessage(true));
+    }, 1000);    
+    
+    setTimeout(() => {
 
-    BotApi.ask(message).then(data => {
-      if(data.success){
-        dispatch(registerMessage({message: data.text, isSender: false}));
-      }
-    });
-  
-  };
+      BotApi.ask(message).then(data => {
+        
+        if(data.success){                
+          dispatch(registerMessage({message: data.text, isSender: false}));       
+        }
+
+      }).catch(e=>{
+
+        console.log(e);
+
+      }).finally(()=>{
+
+        dispatch(setSendingMessage(false));
+
+      });
+    }, 2000);
+
+  }
+    
 
 export const { registerMessage, setSendingMessage } = messagesSlice.actions;
 
 export const selectMessages = state => state.messages.messages;
+export const selectLoadingMessage = state => state.messages.sendingMessage;
 
 export default messagesSlice.reducer;

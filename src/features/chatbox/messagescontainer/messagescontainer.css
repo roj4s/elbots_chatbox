@@ -9,6 +9,39 @@
     
 }
 
+.MessageBoxTypingPoint {    
+    border-radius: 50%;
+    width: 5px;
+    height: 5px;
+    display: inline-block;
+    margin-left: 2px;
+    background-color: rgb(116, 114, 114);
+    
+}
+
+.MessageBoxTypingPoint:nth-child(1) {    
+    animation: bounce 1s infinite;
+}
+
+
+.MessageBoxTypingPoint:nth-child(2) {
+    animation: bounce 1s infinite;
+    animation-direction: reverse;
+}
+
+.MessageBoxTypingPoint:nth-child(3) {
+    animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+
+    0% {transform: translateY(0);}
+    50% {transform: translateY(-150%);}
+    100% {transform: translateY(50%) ;}
+
+
+}
+
 .MessagesContainer::-webkit-scrollbar {
     display: none;
 }

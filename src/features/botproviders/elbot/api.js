@@ -21,7 +21,6 @@ class BotApi {
     ask(question=""){
 
         const isInitial = this.talkParams === null;
-        console.log(`isInitial: ${isInitial}`);
 
         const startMark = isInitial ? this.conversationInitialStartMark: this.conversationStartMark;
         const endMark = this.conversationEndMark;

@@ -43,7 +43,6 @@
       const appHeight = () => {
             const doc = document.documentElement;
             const innerHeight = window.innerHeight;
-            console.log(innerHeight);
             doc.style.setProperty('--app-height', `${innerHeight}px`);
         }
       window.addEventListener('resize', appHeight);

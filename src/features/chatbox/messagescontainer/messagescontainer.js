@@ -1,6 +1,6 @@
 import React , {useCallback, useRef, useEffect} from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { selectMessages, registerMessage } from './messagesSlice';
+import { selectMessages, registerMessage, selectLoadingMessage, setSendingMessage } from './messagesSlice';
 import getBotApi from '../../app/botApi';
 
 
@@ -24,7 +24,10 @@ export default function MessagesContainer() {
               
             }                  
 
+          }).finally(()=>{
+              dispatch(setSendingMessage(false));
           });
+          
     }, [BotApi, dispatch]);
 
     const ref = useRef(null);
@@ -40,6 +43,7 @@ export default function MessagesContainer() {
     });
 
     const messages = useSelector(selectMessages);
+    const loadingMessages = useSelector(selectLoadingMessage);
 
     return (
         <div className="MessagesContainer" ref={setRef}>
@@ -50,7 +54,14 @@ export default function MessagesContainer() {
                                              <div className="MessageBoxWhen">{`${message.when.hour}:${message.when.minute}`}</div>
                                              </div>)
             }
-
+            {
+                loadingMessages &&
+                 (<div className="MessageReceiver MessageBox">
+                    <div className="MessageBoxTypingPoint"></div>
+                    <div className="MessageBoxTypingPoint"></div>
+                    <div className="MessageBoxTypingPoint"></div>
+                </div>)
+            }
             
         </div>
     );
