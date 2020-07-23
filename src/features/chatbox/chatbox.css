@@ -1,22 +1,16 @@
 .ChatBox {
-    border-radius: 28px;
     width: 400px;
     height: 700px;
     text-align: center;
-    box-sizing: border-box;
-    min-width: 400px;
     position: relative;
-    background-color: rgb(250, 227, 231);
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 800px){
 
     .ChatBox{
-        width: 100vw;  
-        height: 100vh;
-        border-radius: 0;
-        box-sizing: border-box;
+        width: var(--app-width) ;
+        height: var(--app-height); 
     }
   
   }

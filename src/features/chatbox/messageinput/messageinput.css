@@ -2,11 +2,9 @@
 
     display: flex;   
     align-items: center; 
-    justify-content: stretch;
     position: absolute;
-    bottom: 10px;
+    bottom: 0;
     width: 100%;
-    box-sizing: border-box;
     border-radius: 10px;
 
 }
@@ -50,9 +48,9 @@
     min-height: 35px;
     border-radius: 50%;
     cursor: pointer;
-    /*
+    
     -webkit-filter: drop-shadow(5px 12px 3px rgba(0, 0, 0, 0.36));
-    filter: drop-shadow(5px 10px 3px rgba(0, 0, 0, 0.36));    */
+    filter: drop-shadow(5px 10px 3px rgba(0, 0, 0, 0.36));    
     border: 2px solid #008C76FF;
     
 }

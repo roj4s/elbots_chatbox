@@ -1,7 +1,7 @@
 import React from 'react';
 import AvatarBar from './avatarbar/avatarbar';
-import MessageInput from './messageinput/messageinput';
 import MessagesContainer from './messagescontainer/messagescontainer';
+import MessageInput from './messageinput/messageinput';
 
 import './chatbox.css';
 

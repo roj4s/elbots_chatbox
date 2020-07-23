@@ -50,6 +50,8 @@ export default function MessagesContainer() {
                                              <div className="MessageBoxWhen">{`${message.when.hour}:${message.when.minute}`}</div>
                                              </div>)
             }
+
+            
         </div>
     );
 

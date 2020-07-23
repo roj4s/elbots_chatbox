@@ -39,5 +39,15 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <script>
+      const appHeight = () => {
+            const doc = document.documentElement;
+            const innerHeight = window.innerHeight;
+            console.log(innerHeight);
+            doc.style.setProperty('--app-height', `${innerHeight}px`);
+        }
+      window.addEventListener('resize', appHeight);
+      appHeight();
+    </script>
   </body>
 </html>
