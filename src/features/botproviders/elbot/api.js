@@ -4,6 +4,7 @@ class BotApi {
         
         this.cors_proxy = 'http://cors-anywhere.herokuapp.com/';
         this.url = "http://elbot-e.artificial-solutions.com/cgi-bin/elbot.cgi";
+        this.images_url = "http://elbot-e.artificial-solutions.com";
 
         if(this.cors_proxy){
             this.url = `${this.cors_proxy}${this.url}`;
@@ -35,8 +36,6 @@ class BotApi {
             thisReqParams['EXTRAINPUT'] += question.length;            
         }
 
-        console.log(thisReqParams);
-
         return fetch(this.url, {
             method: 'POST',
             headers: {
@@ -49,6 +48,10 @@ class BotApi {
 
             let dom = document.createElement('html');
             dom.innerHTML = data;
+            
+
+            const imgurl_parts = dom.getElementsByTagName('img')[0].src.split('/');
+            const img_url = `${this.images_url}/${imgurl_parts.slice(imgurl_parts.length-3).join('/')}`;
                 
             this.talkParams = {};
             const _this = this;
@@ -60,7 +63,8 @@ class BotApi {
 
             return {
                 success: true,
-                text: text
+                text: text,
+                img: img_url
             };  
 
         }).catch(e => {

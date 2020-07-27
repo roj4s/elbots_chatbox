@@ -19,7 +19,8 @@ export default function MessagesContainer() {
             if(data.success){            
               dispatch(registerMessage({
                   message: data.text,
-                  isSender: false
+                  isSender: false,
+                  img: data.img
               }));        
               
             }                  
@@ -27,7 +28,7 @@ export default function MessagesContainer() {
           }).finally(()=>{
               dispatch(setSendingMessage(false));
           });
-          
+
     }, [BotApi, dispatch]);
 
     const ref = useRef(null);
@@ -48,15 +49,19 @@ export default function MessagesContainer() {
     return (
         <div className="MessagesContainer" ref={setRef}>
             {
-                messages.map((message, i) => <div key={message.key}
-                                         className={message.isSender ? "MessageSender MessageBox": "MessageReceiver MessageBox"}>
-                                             {message.message}
-                                             <div className="MessageBoxWhen">{`${message.when.hour}:${message.when.minute}`}</div>
-                                             </div>)
+                messages.map((message, i) => <div className={message.isSender ? "MessageEntry MessageSender" : "MessageEntry MessageReceiver"} key={message.key}>
+                                                { message.img && <img alt="elbot mood" className="MessageEntryImg" src={message.img} /> }
+                                                <div 
+                                                    className={message.isSender ? "MessageSenderBox MessageBox": "MessageReceiverBox MessageBox"}>                                                
+                                                    {message.message}
+                                                    <div className="MessageBoxWhen">{`${message.when.hour}:${message.when.minute}`}</div>
+                                                </div>
+                                             </div>
+                                             )
             }
             {
                 loadingMessages &&
-                 (<div className="MessageReceiver MessageBox">
+                 (<div className="MessageReceiver MessageReceiverBox MessageBox">
                     <div className="MessageBoxTypingPoint"></div>
                     <div className="MessageBoxTypingPoint"></div>
                     <div className="MessageBoxTypingPoint"></div>

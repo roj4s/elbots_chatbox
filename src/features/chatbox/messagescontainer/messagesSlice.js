@@ -31,7 +31,8 @@ const messagesSlice = createSlice({
           key:now.getTime(),
           message: data.message,
           when: getDateObjectFromDate(now),
-          isSender: data.isSender
+          isSender: data.isSender,
+          img: data.img
         };
         state.messages.push(message);
       },
@@ -55,7 +56,11 @@ export const sendMessage = (message) => dispatch => {
       BotApi.ask(message).then(data => {
         
         if(data.success){                
-          dispatch(registerMessage({message: data.text, isSender: false}));       
+          dispatch(registerMessage({
+            message: data.text,
+            isSender: false,
+            img: data.img
+          }));       
         }
 
       }).catch(e=>{
