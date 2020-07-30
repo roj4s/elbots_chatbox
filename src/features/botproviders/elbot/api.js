@@ -24,7 +24,7 @@ class BotApi {
         const _this = this;
         const isInitial = this.talkParams === null;
 
-        const startMark = isInitial ? this.conversationInitialStartMark: this.conversationStartMark;
+        
         const endMark = this.conversationEndMark;
 
         const thisReqParams = isInitial ? {} : Object.assign({}, this.talkParams);
@@ -60,7 +60,9 @@ class BotApi {
             this.talkParamNames.forEach(paramName => {
                 _this.talkParams[paramName] = dom.querySelector(`input[name='${paramName}']`).value;
             });            
-            
+        
+            const startMark = data.indexOf(_this.conversationInitialStartMark) !== -1 
+                                                ? _this.conversationInitialStartMark: _this.conversationStartMark;
             const text = data.slice(data.indexOf(startMark) + startMark.length, data.indexOf(endMark));
 
             return {
