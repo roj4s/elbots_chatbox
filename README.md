@@ -2,9 +2,13 @@
 
   ![demo](./data/demo.gif)
 
+A demo is available as a heroku app at: https://chatwithelbot.herokuapp.com/
+
 Elbot is an eloquent and witty bot developed by [Artificial Solutions](https://www.artificial-solutions.com/). Didn't like much its original UI so I implemented my own using React and Redux.
 
-## Talk with Elbot
+## Run this project locally
+
+Although a demo is available as a [Heroku app](https://chatwithelbot.herokuapp.com/) you might want to run this project locally.
 
 In the project directory, you can run:
 
