@@ -21,6 +21,7 @@ class BotApi {
 
     ask(question=""){
 
+        const _this = this;
         const isInitial = this.talkParams === null;
 
         const startMark = isInitial ? this.conversationInitialStartMark: this.conversationStartMark;
@@ -46,15 +47,16 @@ class BotApi {
             return resp.text();
         }).then(data => {
 
-            let dom = document.createElement('html');
+            let newDocument = document.implementation.createHTMLDocument('Elbot response');
+            let dom =  newDocument.createElement('html');
             dom.innerHTML = data;
             
 
             const imgurl_parts = dom.getElementsByTagName('img')[0].src.split('/');
-            const img_url = `${this.images_url}/${imgurl_parts.slice(imgurl_parts.length-3).join('/')}`;
+            const img_url = `${_this.images_url}/${imgurl_parts.slice(imgurl_parts.length-3).join('/')}`;
                 
             this.talkParams = {};
-            const _this = this;
+            
             this.talkParamNames.forEach(paramName => {
                 _this.talkParams[paramName] = dom.querySelector(`input[name='${paramName}']`).value;
             });            
@@ -68,6 +70,7 @@ class BotApi {
             };  
 
         }).catch(e => {
+            console.log(e);
             return {
                 success: false,
                 text: e
