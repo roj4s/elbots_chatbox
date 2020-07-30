@@ -53,7 +53,7 @@ class BotApi {
             
 
             const imgurl_parts = dom.getElementsByTagName('img')[0].src.split('/');
-            const img_url = `${_this.images_url}/${imgurl_parts.slice(imgurl_parts.length-3).join('/')}`;
+            const img_url = `${imgurl_parts.slice(imgurl_parts.length-3).join('/')}`;
                 
             this.talkParams = {};
             
