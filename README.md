@@ -13,6 +13,18 @@ In the project directory, you can run:
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
+## Production build with docker
+
+Build image:
+
+## `docker build -t elbot .`
+
+Mount image:
+
+## `docker run -p 5000:5000 -it elbot`
+
+Open [http://localhost:5000](http://localhost:5000) to view it in the browser.
+
 ## TODO
 
  - Turn it into a PWA with push notifications, so Elbot will send you messages when you least expected (or when you most need it).
