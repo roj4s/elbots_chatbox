@@ -2,7 +2,7 @@ class BotApi {
 
     constructor() {
         
-        this.cors_proxy = 'http://cors-anywhere.herokuapp.com/';
+        this.cors_proxy = process.env.REACT_APP_CORS_PROXY || 'https://cors-anywhere.herokuapp.com/';
         this.url = "http://elbot-e.artificial-solutions.com/cgi-bin/elbot.cgi";
         this.images_url = "http://elbot-e.artificial-solutions.com";
 
