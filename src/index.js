@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { setA2hsHandlerReady } from './features/addhomescreen/a2hsSlice';
 
 import { Provider } from 'react-redux';
 import store from './features/app/store';
@@ -28,3 +29,5 @@ setupViewPortDimensions();
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.register();
+
+window.addEventListener('beforeinstallprompt', setA2hsHandlerReady);

@@ -11,7 +11,7 @@ export default function ChatBox(){
     return (
         <div className="ChatBox" >
             <AvatarBar
-                image="http://elbot-e.artificial-solutions.com/images/elbot/elbot70.jpg"
+                image="https://elbot-e.artificial-solutions.com/images/elbot/elbot70.jpg"
                 title="Elbot"
                 subtitle="elbot-e.artificial-solutions.com"
                 />
